@@ -9,11 +9,12 @@ const Footer = () => {
   return (
     <div style={{ backgroundColor: '#050543' }}>
       <Container sx={{ padding: '20px' }}>
+        <br />
         <Typography sx={{ color: '#fff', fontSize: '2.1rem', fontWeight: 'bold' }} align='center'>
           Quick Links
         </Typography>
         <Grid container spacing={3} justifyContent='center' >
-          <Grid item lg={4} xs={12}>
+          <Grid item lg={4} md={4} xs={12}>
             <Typography sx={{ color: '#fff', fontSize: '1.3rem', fontStyle: 'italic' }} align='center'>
               Current Peer Educators
             </Typography>
@@ -42,7 +43,7 @@ const Footer = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item lg={4} xs={12}>
+          <Grid item lg={4} md={4} xs={12}>
             <Typography sx={{ color: '#fff', fontSize: '1.3rem', fontStyle: 'italic' }} align='center'>
               Professional Help
             </Typography>
@@ -58,7 +59,7 @@ const Footer = () => {
               <a style={{ color: '#fff', textDecoration: 'none' }} target='_blank' rel='noreferrer' href='https://friendshipbench.org'>Friendship Bench</a>
             </Typography>
           </Grid>
-          <Grid item lg={4} xs={12}>
+          <Grid item lg={4} md={4} xs={12}>
             <Typography sx={{ color: '#fff', fontSize: '1.3rem', fontStyle: 'italic' }} align='center'>
               Peer Educators Alumni
             </Typography>
@@ -88,6 +89,7 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Grid>
+        <br/>
       </Container>
       <div style={{ backgroundColor: '#d3d3d3' }}>
         <Container >

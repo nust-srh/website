@@ -51,7 +51,7 @@ const Header = () => {
               >
                 Blog
               </Link>
-              <Link to='/presidents'
+              <Link to='/alumni'
                 style={{
                   textDecoration: 'none',
                   color: '#fff',
@@ -59,7 +59,7 @@ const Header = () => {
                   marginLeft: theme.spacing(10),
                 }}
               >
-                Presidents
+                Alumni
               </Link>
             </div>
           )}
