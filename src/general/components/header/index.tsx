@@ -3,6 +3,8 @@ import { AppBar, Toolbar, CssBaseline, useMediaQuery, useTheme, Box, Typography 
 import { Link } from 'react-router-dom';
 import DrawerComponent from './DrawerComponent';
 
+import logo from '../../../assets/logo.png';
+
 
 
 const Header = () => {
@@ -15,7 +17,18 @@ const Header = () => {
         <CssBaseline />
         <Toolbar>
           <Box sx={{ flexGrow: 1, cursor: 'pointer' }}>
-            <Typography variant='h4' sx={{ color: '#fff' }}>Logo here</Typography>
+            <Link to='/'
+              style={{
+                textDecoration: 'none',
+                marginLeft: theme.spacing(10),
+              }}
+            >
+              <img
+                src={logo}
+                height='50px'
+                alt='logo'
+              />
+            </Link>
           </Box>
           {isMobile ? (
             <DrawerComponent />

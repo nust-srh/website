@@ -1,13 +1,12 @@
 import { Grid, TextField, Typography, Button, Box, Container, FormControlLabel, Checkbox } from '@mui/material';
-import { Place, Email } from '@mui/icons-material';
 import React from 'react'
 
 const Contact = () => {
   return (
-    <div style={{ background: '#fafafa'}}>
-      <Container sx={{ padding: '20px' }}>
+    <div style={{ background: '#d3d3d3' }}>
+      <Container maxWidth='md' sx={{ paddingtop: '20px', paddingBottom: '20px' }}>
         <Grid container spacing={3} sx={{ justifyContent: 'space-evenly' }} >
-          <Grid item xs={12} lg={4} md={4}>
+          <Grid item xs={12} lg={6} md={6}>
             <form >
               <Typography variant='subtitle1' sx={{ color: '#050543', fontStyle: 'italic', textAlign: 'center' }}>
                 Reach Out to Us
@@ -108,45 +107,7 @@ const Contact = () => {
               </Grid>
             </form>
           </Grid>
-          <Grid item xs={12} lg={4}  md={4}>
-            <Grid container spacing={1} alignItems='center'>
-              <Grid item xs={12}>
-                <Grid container spacing={2} display='flex' flexDirection='row' alignItems='center'>
-                  <Grid item >
-                    <Place sx={{ color: '#f36a11', fontSize: '50px' }} />
-                  </Grid>
-                  <Grid item flex={1}>
-                    <Typography variant='h6' sx={{ color: '#050543', fontWeight: 'bold' }} align='center'>
-                      Our Resource Centre
-                    </Typography>
-                    <Typography variant='subtitle1' sx={{ color: '#050543' }} align='center'>
-                      Delta Building Basement Floor
-                    </Typography>
-                    <Typography variant='subtitle1' sx={{ color: '#050543' }} align='center'>
-                      NUST
-                    </Typography>
-                    <br />
-                  </Grid>
-                </Grid>
-              </Grid>
-              <Grid item xs={12}>
-                <Grid container spacing={2} display='flex' flexDirection='row' alignItems='center'>
-                  <Grid item >
-                    <Email sx={{ color: '#f36a11', fontSize: '50px' }} />
-                  </Grid>
-                  <Grid item flex={1}>
-                    <Typography variant='h6' sx={{ color: '#050543', fontWeight: 'bold' }} align='center'>
-                      Our Email
-                    </Typography>
-                    <Typography variant='subtitle1' sx={{ color: '#050543' }} align='center'>
-                      nust.srh@gmail.com
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} lg={4}  md={4}>
+          <Grid item xs={12} lg={6} md={6}>
             <Container>
               <Typography variant='h6' sx={{ color: '#050543', fontWeight: 'bold' }} align='center'>
                 Newsletter

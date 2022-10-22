@@ -1,6 +1,6 @@
 import { Container, Grid, Typography } from '@mui/material';
-import story1 from '../../assets/story1.jpg';
-import story2 from '../../assets/story2.jpg';
+import story1 from '../../../assets/story1.jpg';
+import story2 from '../../../assets/story2.jpg';
 
 
 function Story() {

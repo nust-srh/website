@@ -10,7 +10,7 @@ import Collapse from '@mui/material/Collapse';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import hardfacts from '../../assets/hardfacts.png';
+import hardfacts from '../../../assets/hardfacts.png';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;

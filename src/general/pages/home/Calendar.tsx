@@ -7,7 +7,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
 
-import compassion from '../../assets/compassion.jpg';
+import compassion from '../../../assets/compassion.jpg';
 
 const Calendar = () => {
   return (
@@ -15,7 +15,7 @@ const Calendar = () => {
       <Typography variant='h4' align='center' sx={{ color: '#050543', paddingTop: '20px' }}>
         Current Semester's Calendar
       </Typography>
-      <Timeline position="alternate">
+      <Timeline position='left'>
         <TimelineItem>
           <TimelineSeparator>
             <TimelineConnector sx={{ height: '40px' }} />
@@ -29,7 +29,7 @@ const Calendar = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '60px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant='h6' component='span'>
               Open Day
             </Typography>
             <Typography variant='subtitle2'>11 Sept 2022</Typography>
@@ -48,7 +48,7 @@ const Calendar = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '60px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant='h6' component='span'>
               Outreach
             </Typography>
             <Typography variant='subtitle2'>11 Sept 2022</Typography>
@@ -67,7 +67,7 @@ const Calendar = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '60px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant='h6' component='span'>
               A good event
             </Typography>
             <Typography variant='subtitle2'>11 Sept 2022</Typography>
@@ -86,7 +86,7 @@ const Calendar = () => {
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: '60px', px: 2 }}>
-            <Typography variant="h6" component="span">
+            <Typography variant='h6' component='span'>
               Good Event
             </Typography>
             <Typography variant='subtitle2'>11 Sept 2022</Typography>

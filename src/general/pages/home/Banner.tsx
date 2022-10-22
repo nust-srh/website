@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React from 'react'
-import background from '../../assets/background.jpg';
-import president from '../../assets/president.jpg';
+import background from '../../../assets/background.jpg';
+import president from '../../../assets/president.jpg';
 
 const Banner = () => {
   return (

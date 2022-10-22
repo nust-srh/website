@@ -1,6 +1,6 @@
 import React from 'react';
-import banner from '../../assets/banner.jpg';
-import compassion from '../../assets/compassion.jpg';
+import banner from '../../../assets/banner.jpg';
+import compassion from '../../../assets/compassion.jpg';
 import { Card, Container, Grid, Typography, Box, CardMedia, CardContent, Button } from '@mui/material';
 
 const Blog = () => {
