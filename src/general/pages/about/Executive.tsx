@@ -63,21 +63,22 @@ const Executive = () => {
   return (
     <div style={{ marginTop: '40px', marginBottom: '20px' }}>
       <Container maxWidth='lg' sx={{ alignItems: 'center', justifyContent: 'center' }}>
-        <Typography align='center' sx={{ color: '#050543', fontSize: '1.9rem', fontWeight: 'bold' }}>
+        <Typography align='center' sx={{ color: '#060543', fontSize: '1.9rem', fontWeight: 'bold' }}>
           Our Current Executive
         </Typography>
         <Grid container spacing={3} alignItems='center' justifyContent='center' sx={{ marginTop: '15px' }}>
           <Grid item lg={3} md={3} xs={12}>
-            <Card sx={{ maxWidth: '100%', borderRadius: '0px'  }}>
+            <Card sx={{ maxWidth: '100%', borderRadius: '0px' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Bra Rajesh'
               />
               <CardHeader
                 title='Silas Mavende'
-                subheader='Cde President'
+                subheader='President'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -100,16 +101,17 @@ const Executive = () => {
             </Card>
           </Grid>
           <Grid item lg={3} md={3} xs={12}>
-            <Card sx={{ maxWidth: '100%', borderRadius: '0px'  }}>
+            <Card sx={{ maxWidth: '100%', borderRadius: '0px' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Sean Timba'
               />
               <CardHeader
                 title='Sean Timba'
-                subheader='Cde VP'
+                subheader='Vice President'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -132,16 +134,17 @@ const Executive = () => {
             </Card>
           </Grid>
           <Grid item lg={3} md={3} xs={12}>
-            <Card sx={{ maxWidth: '100%', borderRadius: '0px'  }}>
+            <Card sx={{ maxWidth: '100%', borderRadius: '0px' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Bra Rajesh'
               />
               <CardHeader
                 title='Jane Phiri'
-                subheader='Cde Tresurer'
+                subheader='Treasurer'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -167,13 +170,14 @@ const Executive = () => {
             <Card sx={{ maxWidth: '100%', borderRadius: '0px' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Bra Rajesh'
               />
               <CardHeader
                 title='Hluphekile Madjozi'
-                subheader='Cde Secretary'
+                subheader='Secretary'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -196,16 +200,17 @@ const Executive = () => {
             </Card>
           </Grid>
           <Grid item lg={3} md={3} xs={12}>
-            <Card sx={{ maxWidth: '100%', borderRadius: '0px'  }}>
+            <Card sx={{ maxWidth: '100%', borderRadius: '0px' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Bra Rajesh'
               />
               <CardHeader
                 title='John Banda'
-                subheader='Cde Projects'
+                subheader='Projects Director'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -231,13 +236,14 @@ const Executive = () => {
             <Card sx={{ maxWidth: '100%' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Bra Rajesh'
               />
               <CardHeader
                 title='Catherine Ncube'
-                subheader='Cde Projects'
+                subheader='Projects Director'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -263,13 +269,14 @@ const Executive = () => {
             <Card sx={{ maxWidth: '100%' }}>
               <CardMedia
                 component='img'
-                height='270'
+                height='240'
                 image={hardfacts}
                 alt='Bra Rajesh'
               />
               <CardHeader
                 title='James Chiweshe'
-                subheader='Cde Media'
+                subheader='Information Officer'
+                sx={{ height: '60px' }}
               />
               <CardActions disableSpacing>
                 <ExpandMore
@@ -290,7 +297,7 @@ const Executive = () => {
                 </CardContent>
               </Collapse>
             </Card>
-          </Grid> 
+          </Grid>
         </Grid>
       </Container>
     </div>

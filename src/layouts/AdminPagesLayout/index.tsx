@@ -17,6 +17,7 @@ const AdminPagesLayout = () => {
         <Box
           component="main"
           sx={{
+            padding: '30px',
             backgroundColor: (theme) =>
               theme.palette.mode === 'light'
                 ? theme.palette.grey[100]

@@ -1,9 +1,16 @@
 import React from 'react'
+import AlumniProjects from './AlumniProjects'
+import Presidents from './Presidents'
+import RollCall from './RollCall'
 
-const Presidents = () => {
+const Alumni = () => {
   return (
-    <div>presidents</div>
+    <div>
+      <RollCall />
+      <AlumniProjects />
+      <Presidents />
+    </div>
   )
 }
 
-export default Presidents
+export default Alumni

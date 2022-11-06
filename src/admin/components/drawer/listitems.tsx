@@ -5,7 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Link } from 'react-router-dom';
-import { BrowseGallery, Logout, PhotoAlbum } from '@mui/icons-material';
+import { BrowseGallery, CalendarMonth, Group, Hail, Logout, MilitaryTech, Spa } from '@mui/icons-material';
 
 
 
@@ -28,7 +28,7 @@ export const mainListItems = (
         <Link to='/mambo/events' style={{ textDecoration: 'none', color: '#333333' }}>
             <ListItemButton >
                 <ListItemIcon>
-                    <BrowseGallery />
+                    <CalendarMonth />
                 </ListItemIcon>
                 <ListItemText primary='Semester Events' />
             </ListItemButton>
@@ -36,7 +36,7 @@ export const mainListItems = (
         <Link to='/mambo/executive' style={{ textDecoration: 'none', color: '#333333' }}>
             <ListItemButton >
                 <ListItemIcon>
-                    <BrowseGallery />
+                    <Group />
                 </ListItemIcon>
                 <ListItemText primary='Executive' />
             </ListItemButton>
@@ -44,7 +44,7 @@ export const mainListItems = (
         <Link to='/mambo/roll-call' style={{ textDecoration: 'none', color: '#333333' }}>
             <ListItemButton >
                 <ListItemIcon>
-                    <BrowseGallery />
+                    <MilitaryTech />
                 </ListItemIcon>
                 <ListItemText primary='Roll Call' />
             </ListItemButton>
@@ -52,7 +52,7 @@ export const mainListItems = (
         <Link to='/mambo/initiatives' style={{ textDecoration: 'none', color: '#333333' }}>
             <ListItemButton >
                 <ListItemIcon>
-                    <BrowseGallery />
+                    <Spa />
                 </ListItemIcon>
                 <ListItemText primary='Presidents Initiatives' />
             </ListItemButton>
@@ -60,7 +60,7 @@ export const mainListItems = (
         <Link to='/mambo/presidents' style={{ textDecoration: 'none', color: '#333333' }}>
             <ListItemButton >
                 <ListItemIcon>
-                    <BrowseGallery />
+                    <Hail />
                 </ListItemIcon>
                 <ListItemText primary='Presidents' />
             </ListItemButton>

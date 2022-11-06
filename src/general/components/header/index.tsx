@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, CssBaseline, useMediaQuery, useTheme, Box, Typography } from '@mui/material';
+import { AppBar, Toolbar, CssBaseline, useMediaQuery, useTheme, Box} from '@mui/material';
 import { Link } from 'react-router-dom';
 import DrawerComponent from './DrawerComponent';
 

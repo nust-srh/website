@@ -75,7 +75,7 @@ const Footer = () => {
           <Grid item lg={4} md={4} xs={12}>
             <Grid container spacing={1} direction='row' justifyContent='center' alignItems='center' display='flex'>
               <Grid item flex={1}>
-                <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://facebook.com/patriotizim'>
+                <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://www.facebook.com/nust.srh/'>
                   <FacebookOutlined
                     sx={{
                       textAlign: 'center',
@@ -90,7 +90,7 @@ const Footer = () => {
                 </a>
               </Grid>
               <Grid item flex={1}>
-                <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://twitter.com/patriotizim'>
+                <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://twitter.com/choicenust'>
                   <Twitter
                     sx={{
                       textAlign: 'center',
@@ -105,7 +105,7 @@ const Footer = () => {
                 </a>
               </Grid>
               <Grid item flex={1}>
-                <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://www.youtube.com/channel/UCpsxK9qqm96XU5sTmYRHjhA'>
+                <a style={{ color: '#fff' }} target='_blank' rel='noreferrer' href='https://www.instagram.com/nust.srh/'>
                   <Instagram
                     sx={{
                       textAlign: 'center',

@@ -1,22 +1,18 @@
-import { Handshake, Diversity1, MilitaryTech, Lock} from '@mui/icons-material';
-import { Box,  Container,  Grid, Typography } from '@mui/material';
+import { Handshake, Diversity1, MilitaryTech, Lock } from '@mui/icons-material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 function Objectives() {
   return (
     <div>
-      <Container maxWidth='md'>
+      <Container maxWidth='sm'>
         <Typography align='center' sx={{ fontSize: '1.9rem', color: '#f36a11', fontWeight: 'bold' }}>
-          Our Objectives
+          Our Purpose
         </Typography>
         <br />
         <Typography align='center' variant='h6' sx={{ color: '#050543' }}>
-          1. This is the first objective of the organisation
-        </Typography>
-        <Typography align='center' variant='h6' sx={{ color: '#050543' }}>
-          2. This is the second objective of the organisation
-        </Typography>
-        <Typography align='center' variant='h6' sx={{ color: '#050543' }}>
-          3. This is the third objective of the organisation
+          We promote health-enhancing behavior change in young students by providing 
+          suggestions to pressing health and social problems so that people live healthier, 
+          happier and more productive lives.
         </Typography>
       </Container>
       <Container maxWidth='lg' sx={{ marginTop: '40px' }}>
