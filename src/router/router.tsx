@@ -1,33 +1,38 @@
-import { Suspense, lazy } from 'react';
-import { RouteObject } from 'react-router';
+import { Suspense, lazy } from 'react'
+import { RouteObject } from 'react-router'
 
 //Suspense Loader
-import SuspenseLoader from '../general/components/SuspenseLoader';
+import SuspenseLoader from '../general/components/SuspenseLoader'
 
 //Layouts
-import GeneralPagesLayout from '../layouts/GeneralPagesLayout';
-import AdminPagesLayout from '../layouts/AdminPagesLayout';
+import GeneralPagesLayout from '../layouts/GeneralPagesLayout'
+import AdminPagesLayout from '../layouts/AdminPagesLayout'
 
 const Loader = (Component: any) => (props: any) =>
-(
-    <Suspense fallback={<SuspenseLoader />}>
-        <Component {...props} />
-    </Suspense>
-);
+    (
+        <Suspense fallback={<SuspenseLoader />}>
+            <Component {...props} />
+        </Suspense>
+    )
 
 //General Pages
-const Home = Loader(lazy(() => import('../general/pages/home')));
-const About = Loader(lazy(() => import('../general/pages/about')));
-const Blog = Loader(lazy(() => import('../general/pages/blog')));
-const Alumni = Loader(lazy(() => import('../general/pages/alumni')));
+const Home = Loader(lazy(() => import('../general/pages/home')))
+const About = Loader(lazy(() => import('../general/pages/about')))
+const Blog = Loader(lazy(() => import('../general/pages/blog')))
+const Alumni = Loader(lazy(() => import('../general/pages/alumni')))
 
 //Admin Pages
-const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')));
-const Events = Loader(lazy(() => import('../admin/pages/events')));
-const Executive = Loader(lazy(() => import('../admin/pages/executive')));
-const PresidentInitiatives = Loader(lazy(() => import('../admin/pages/president-initiatives')));
-const Presidents = Loader(lazy(() => import('../admin/pages/presidents')));
-const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')));
+const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
+const Events = Loader(lazy(() => import('../admin/pages/events')))
+const Executive = Loader(lazy(() => import('../admin/pages/executive')))
+const PresidentInitiatives = Loader(
+    lazy(() => import('../admin/pages/president-initiatives'))
+)
+const Presidents = Loader(lazy(() => import('../admin/pages/presidents')))
+const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')))
+
+//Add Pages
+const AddBlog = Loader(lazy(() => import('../admin/pages/add/AddBlog')))
 
 const routes: RouteObject[] = [
     {
@@ -36,21 +41,21 @@ const routes: RouteObject[] = [
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
             },
             {
                 path: 'about',
-                element: <About />
+                element: <About />,
             },
             {
                 path: 'blog',
-                element: <Blog />
+                element: <Blog />,
             },
             {
                 path: 'alumni',
-                element: <Alumni />
-            }
-        ]
+                element: <Alumni />,
+            },
+        ],
     },
     {
         path: 'mambo',
@@ -58,30 +63,34 @@ const routes: RouteObject[] = [
         children: [
             {
                 path: 'blog',
-                element: <AdminBlog />
+                element: <AdminBlog />,
             },
             {
                 path: 'events',
-                element: <Events />
+                element: <Events />,
             },
             {
                 path: 'executive',
-                element: <Executive />
+                element: <Executive />,
             },
             {
                 path: 'initiatives',
-                element: <PresidentInitiatives />
+                element: <PresidentInitiatives />,
             },
             {
                 path: 'presidents',
-                element: <Presidents />
+                element: <Presidents />,
             },
             {
                 path: 'roll-call',
-                element: <RollCall />
-            }
-        ]
-    }
-];
+                element: <RollCall />,
+            },
+            {
+                path: 'blog/add',
+                element: <AddBlog />,
+            },
+        ],
+    },
+]
 
-export default routes;
+export default routes

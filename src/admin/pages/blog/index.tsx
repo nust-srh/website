@@ -2,7 +2,7 @@ import { Button, Typography, Box } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Articles from './Articles'
+import Blogs from './Blogs'
 
 const Blog = () => {
     return (
@@ -29,11 +29,11 @@ const Blog = () => {
                             borderRadius: '10px',
                         }}
                     >
-                        Add Article
+                        Add Blog
                     </Button>
                 </Box>
             </Link>
-            <Articles />
+            <Blogs />
         </div>
     )
 }
