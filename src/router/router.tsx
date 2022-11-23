@@ -20,6 +20,7 @@ const Home = Loader(lazy(() => import('../general/pages/home')))
 const About = Loader(lazy(() => import('../general/pages/about')))
 const Blog = Loader(lazy(() => import('../general/pages/blog')))
 const Alumni = Loader(lazy(() => import('../general/pages/alumni')))
+const Article = Loader(lazy(()=> import('../general/pages/article')))
 
 //Admin Pages
 const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
@@ -55,6 +56,10 @@ const routes: RouteObject[] = [
                 path: 'alumni',
                 element: <Alumni />,
             },
+            {
+                path: 'blog/:id',
+                element: <Article/>
+            }
         ],
     },
     {

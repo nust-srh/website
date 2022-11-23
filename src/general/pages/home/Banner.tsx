@@ -12,10 +12,10 @@ const Banner = () => {
         <Container maxWidth='lg' sx={{ minHeight: '450px', paddingBottom: '20px' }}>
           <Grid container sx={{ paddingTop: '100px' }} alignItems='center' justifyContent='center' >
             <Typography variant='h2' sx={{ color: '#fff', fontWeight: 'bold', textAlign: "center" }}>
-              A lousy phrase here, on a good-dark background
+              We are the choice champions!
             </Typography>
             <Typography sx={{ color: '#fff', fontSize: '1.3rem', fontStyle: 'italic', textAlign: "center" }}>
-              And a welcoming continuation in italics here
+              ...We don't impose it, we choice it out
             </Typography>
           </Grid>
         </Container>

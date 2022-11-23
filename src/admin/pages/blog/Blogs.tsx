@@ -17,12 +17,15 @@ import {
 
 import { db } from '../../../services/firebaseConfig'
 
-type IBlog = {
+export type IBlog = {
     id: string
     abstract: string
     author: string
     body: string
-    createdAt: number
+    createdAt: {
+        seconds: number
+        nanoseconds: number
+    }
     imageUrl: string
     title: string
 }
@@ -50,7 +53,13 @@ const Blogs = () => {
         <>
             <Container maxWidth="lg" sx={{ marginTop: '20px' }}>
                 {Blogs.map((Blog) => (
-                    <Card sx={{ backgroundColor: 'transparent' }} key={Blog.id}>
+                    <Card
+                        sx={{
+                            backgroundColor: 'transparent',
+                            marginBottom: '20px',
+                        }}
+                        key={Blog.id}
+                    >
                         <Grid
                             container
                             spacing={2}
@@ -70,7 +79,9 @@ const Blogs = () => {
                                     {Blog.title}
                                 </Typography>
                                 <Typography variant="subtitle2">
-                                    {new Date(Blog.createdAt *26.157).toDateString()}
+                                    {new Date(
+                                        Blog.createdAt.seconds * 1000
+                                    ).toDateString()}
                                 </Typography>
                             </Grid>
                             <Grid item lg={5} md={5} sm={12} xs={12}>
