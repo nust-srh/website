@@ -11,7 +11,6 @@ import {
     Button,
 } from '@mui/material'
 import { Link } from 'react-router-dom'
-import { IBlog } from '../../../admin/pages/blog/Blogs'
 import {
     collection,
     onSnapshot,

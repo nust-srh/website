@@ -20,7 +20,7 @@ const Home = Loader(lazy(() => import('../general/pages/home')))
 const About = Loader(lazy(() => import('../general/pages/about')))
 const Blog = Loader(lazy(() => import('../general/pages/blog')))
 const Alumni = Loader(lazy(() => import('../general/pages/alumni')))
-const Article = Loader(lazy(()=> import('../general/pages/article')))
+const Article = Loader(lazy(() => import('../general/pages/article')))
 
 //Admin Pages
 const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
@@ -29,11 +29,14 @@ const Executive = Loader(lazy(() => import('../admin/pages/executive')))
 const PresidentInitiatives = Loader(
     lazy(() => import('../admin/pages/president-initiatives'))
 )
+const PhotoGallery = Loader(lazy(() => import('../admin/pages/gallery')))
 const Presidents = Loader(lazy(() => import('../admin/pages/presidents')))
 const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')))
 
 //Add Pages
 const AddBlog = Loader(lazy(() => import('../admin/pages/add/AddBlog')))
+const AddPicture = Loader(lazy(() => import('../admin/pages/add/AddPicture')))
+const AddEvent = Loader(lazy(() => import('../admin/pages/add/AddEvent')))
 
 const routes: RouteObject[] = [
     {
@@ -58,8 +61,8 @@ const routes: RouteObject[] = [
             },
             {
                 path: 'blog/:id',
-                element: <Article/>
-            }
+                element: <Article />,
+            },
         ],
     },
     {
@@ -91,8 +94,21 @@ const routes: RouteObject[] = [
                 element: <RollCall />,
             },
             {
+                path: 'gallery',
+                element: <PhotoGallery />,
+            },
+            //add pages
+            {
                 path: 'blog/add',
                 element: <AddBlog />,
+            },
+            {
+                path: 'gallery/add',
+                element: <AddPicture />,
+            },
+            {
+                path: 'events/add',
+                element: <AddEvent />,
             },
         ],
     },

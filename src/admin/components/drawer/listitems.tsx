@@ -5,7 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Link } from 'react-router-dom';
-import { BrowseGallery, CalendarMonth, Group, Hail, Logout, MilitaryTech, Spa } from '@mui/icons-material';
+import { BrowseGallery, CalendarMonth, Group, Hail, Logout, MilitaryTech, Spa ,PhotoAlbum} from '@mui/icons-material';
 
 
 
@@ -31,6 +31,14 @@ export const mainListItems = (
                     <CalendarMonth />
                 </ListItemIcon>
                 <ListItemText primary='Semester Events' />
+            </ListItemButton>
+        </Link>
+        <Link to='/mambo/gallery' style={{ textDecoration: 'none', color: '#333333' }}>
+            <ListItemButton >
+                <ListItemIcon>
+                    <PhotoAlbum />
+                </ListItemIcon>
+                <ListItemText primary='Photo Gallery' />
             </ListItemButton>
         </Link>
         <Link to='/mambo/executive' style={{ textDecoration: 'none', color: '#333333' }}>

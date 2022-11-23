@@ -61,7 +61,7 @@ const Footer = () => {
                                         className="link"
                                         target="_blank"
                                         rel="noreferrer"
-                                        href="https://saywhat.org"
+                                        href="https://saywhat.org.zw"
                                     >
                                         SAYWHAT
                                     </a>

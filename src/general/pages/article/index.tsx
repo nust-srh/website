@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import './article.css'
 import { db } from '../../../services/firebaseConfig'
 import { Container, Typography } from '@mui/material'
-import { IBlog } from '../../../admin/pages/blog/Blogs'
 
 export default function Article() {
     const { id } = useParams()
