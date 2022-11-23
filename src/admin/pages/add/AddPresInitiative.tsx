@@ -14,7 +14,7 @@ import { Timestamp, collection, addDoc } from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { storage, db } from '../../../services/firebaseConfig'
 
-const AddEvent = () => {
+const AddPresInitiative = () => {
     const [loader, setLoader] = React.useState(false)
     const [title, setTitle] = React.useState('')
     const [description, setDescription] = React.useState('')
@@ -65,7 +65,7 @@ const AddEvent = () => {
             () => {
                 // Upload completed successfully, now we can get the download URL
                 getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                    const eventRef = collection(db, 'Events')
+                    const eventRef = collection(db, 'Initiatives')
                     addDoc(eventRef, {
                         title: title,
                         imageUrl: downloadURL,
@@ -78,7 +78,7 @@ const AddEvent = () => {
                         .then(() => {
                             setLoader(false)
                             setProgress(0)
-                            alert('Event Successfully Published')
+                            alert('initiative Successfully Published')
                         })
                         .catch((error) => {
                             alert(error.message)
@@ -100,7 +100,7 @@ const AddEvent = () => {
         <div>
             <Container maxWidth="lg" sx={{ paddingTop: '70px' }}>
                 <Typography variant="h3" align="center">
-                    Add Event
+                    Add Presidents Initiative
                 </Typography>
 
                 <Grid
@@ -110,7 +110,7 @@ const AddEvent = () => {
                 >
                     <Grid item xs={12}>
                         <TextField
-                            placeholder="Article Title"
+                            placeholder="Initiative Title"
                             label="Title"
                             name="title"
                             variant="outlined"
@@ -147,7 +147,7 @@ const AddEvent = () => {
                                         sx={{ color: '#333333' }}
                                     >
                                         <UploadIcon />
-                                        Event Poster
+                                        Initiative Poster
                                     </Button>
                                     {loader ? (
                                         <Box sx={{ width: '100%' }}>
@@ -162,7 +162,7 @@ const AddEvent = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                placeholder="Event Description"
+                                placeholder="Initiative Description"
                                 label="description"
                                 name="description"
                                 variant="outlined"
@@ -182,7 +182,7 @@ const AddEvent = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                placeholder="Event date/ duration"
+                                placeholder="Initiative date/ duration"
                                 label="duration"
                                 name="duration"
                                 variant="outlined"
@@ -200,7 +200,7 @@ const AddEvent = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                placeholder="Event Partners"
+                                placeholder="Initiative Partners"
                                 label="partners"
                                 name="partners"
                                 variant="outlined"
@@ -220,7 +220,7 @@ const AddEvent = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
-                                placeholder="Event Details"
+                                placeholder="initiative Details"
                                 name="details"
                                 variant="outlined"
                                 fullWidth
@@ -264,4 +264,4 @@ const AddEvent = () => {
     )
 }
 
-export default AddEvent
+export default AddPresInitiative

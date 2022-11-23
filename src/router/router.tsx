@@ -37,6 +37,9 @@ const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')))
 const AddBlog = Loader(lazy(() => import('../admin/pages/add/AddBlog')))
 const AddPicture = Loader(lazy(() => import('../admin/pages/add/AddPicture')))
 const AddEvent = Loader(lazy(() => import('../admin/pages/add/AddEvent')))
+const AddPresInitiative = Loader(
+    lazy(() => import('../admin/pages/add/AddPresInitiative'))
+)
 
 const routes: RouteObject[] = [
     {
@@ -109,6 +112,10 @@ const routes: RouteObject[] = [
             {
                 path: 'events/add',
                 element: <AddEvent />,
+            },
+            {
+                path: 'initiatives/add',
+                element: <AddPresInitiative />,
             },
         ],
     },

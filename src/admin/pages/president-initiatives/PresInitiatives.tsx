@@ -14,23 +14,23 @@ import {
 
 import { db } from '../../../services/firebaseConfig'
 
-const Events = () => {
-    const [events, setEvents] = useState<any[]>([])
+const PresInitiatives = () => {
+    const [initiatives, setInitiatives] = useState<any[]>([])
 
     useEffect(() => {
-        const q = query(collection(db, 'Events'))
+        const q = query(collection(db, 'Initiatives'))
         const unsub = onSnapshot(q, (querySnapshot) => {
-            let eventsArray: any[] = []
+            let initiativesArray: any[] = []
             querySnapshot.forEach((doc) => {
-                eventsArray.push({ ...doc.data(), id: doc.id })
+                initiativesArray.push({ ...doc.data(), id: doc.id })
             })
-            setEvents(eventsArray)
+            setInitiatives(initiativesArray)
         })
         return () => unsub()
     }, [])
 
     const handleDelete = async (id: string) => {
-        await deleteDoc(doc(db, 'Events', id))
+        await deleteDoc(doc(db, 'Initiatives', id))
     }
 
     return (
@@ -41,7 +41,7 @@ const Events = () => {
             >
                 <br />
                 <Grid container spacing={3} alignItems="center">
-                    {events.map((event) => (
+                    {initiatives.map((initiative) => (
                         <Grid item lg={12}>
                             <Card sx={{ backgroundColor: 'transparent' }}>
                                 <Grid
@@ -53,22 +53,22 @@ const Events = () => {
                                     <Grid item lg={2} md={2} sm={12} xs={12}>
                                         <CardMedia
                                             component="img"
-                                            image={event?.imageUrl}
-                                            alt={event?.title}
+                                            image={initiative?.imageUrl}
+                                            alt={initiative?.title}
                                             height="150px"
                                         />
                                     </Grid>
                                     <Grid item lg={3} md={3} sm={12} xs={12}>
                                         <Typography variant="h6">
-                                            {event?.title}
+                                            {initiative?.title}
                                         </Typography>
                                         <Typography variant="subtitle2">
-                                            {event?.duration}
+                                            {initiative?.duration}
                                         </Typography>
                                     </Grid>
                                     <Grid item lg={5} md={5} sm={12} xs={12}>
                                         <Typography variant="subtitle2">
-                                            {event?.description}
+                                            {initiative?.description}
                                         </Typography>
                                     </Grid>
                                     <Grid item lg={2} md={2} sm={12} xs={12}>
@@ -79,7 +79,7 @@ const Events = () => {
                                                 color: '#fff',
                                             }}
                                             onClick={() =>
-                                                handleDelete(event?.id)
+                                                handleDelete(initiative?.id)
                                             }
                                         >
                                             Delete
@@ -97,4 +97,4 @@ const Events = () => {
     )
 }
 
-export default Events
+export default PresInitiatives
