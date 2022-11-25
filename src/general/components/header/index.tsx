@@ -25,7 +25,7 @@ const Header = () => {
             >
               <img
                 src={logo}
-                height='50px'
+                height='45px'
                 alt='logo'
               />
             </Link>

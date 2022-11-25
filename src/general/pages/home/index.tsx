@@ -6,15 +6,15 @@ import Gallery from './Gallery'
 import Join from './Join'
 
 const Home = () => {
-  return (
-    <div >
-      <Banner />
-      <Calendar />
-      <Join />
-      <Gallery />
-      <Contact />
-    </div>
-  )
+    return (
+        <>
+            <Banner />
+            <Join />
+            <Calendar />
+            <Gallery />
+            <Contact />
+        </>
+    )
 }
 
-export default Home;
+export default Home

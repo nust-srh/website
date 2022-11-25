@@ -19,16 +19,21 @@ const RollCall = () => {
                     justifyContent="center"
                     sx={{ padding: '20px' }}
                 >
-                    <Button
-                        variant="outlined"
-                        sx={{
-                            backgroundColor: '#f36a11',
-                            color: '#fff',
-                            borderRadius: '10px',
-                        }}
+                    <Link
+                        to="/mambo/roll-call/add"
+                        style={{ textDecoration: 'none' }}
                     >
-                        Add Recruitment Year
-                    </Button>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                backgroundColor: '#f36a11',
+                                color: '#fff',
+                                borderRadius: '10px',
+                            }}
+                        >
+                            Add Recruitment Year
+                        </Button>
+                    </Link>
                 </Box>
                 <Grid container padding="30px" spacing={3}>
                     <Grid item lg={4} md={4} sm={12} xs={12}>

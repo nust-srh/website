@@ -40,7 +40,7 @@ export default function Article() {
                     color="text.secondary"
                 >
                     By {article?.author},{' '}
-                    {new Date(article.createdAt.seconds * 1000).toDateString()}
+                    {new Date(article?.createdAt.seconds * 1000).toDateString()}
                 </Typography>
                 <br />
                 <Typography variant="body1" className="body">

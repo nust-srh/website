@@ -62,7 +62,7 @@ export const mainListItems = (
                 <ListItemIcon>
                     <Spa />
                 </ListItemIcon>
-                <ListItemText primary='Presidents Initiatives' />
+                <ListItemText primary='Alumni Initiatives' />
             </ListItemButton>
         </Link>
         <Link to='/mambo/presidents' style={{ textDecoration: 'none', color: '#333333' }}>

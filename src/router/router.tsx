@@ -21,6 +21,7 @@ const About = Loader(lazy(() => import('../general/pages/about')))
 const Blog = Loader(lazy(() => import('../general/pages/blog')))
 const Alumni = Loader(lazy(() => import('../general/pages/alumni')))
 const Article = Loader(lazy(() => import('../general/pages/article')))
+const Event = Loader(lazy(() => import('../general/pages/event')))
 
 //Admin Pages
 const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
@@ -40,6 +41,11 @@ const AddEvent = Loader(lazy(() => import('../admin/pages/add/AddEvent')))
 const AddPresInitiative = Loader(
     lazy(() => import('../admin/pages/add/AddPresInitiative'))
 )
+const AddPresident = Loader(
+    lazy(() => import('../admin/pages/add/AddPresident'))
+)
+const AddRollCallYear = Loader(lazy(() => import('../admin/pages/add/AddRollCallYear')))
+
 
 const routes: RouteObject[] = [
     {
@@ -65,6 +71,10 @@ const routes: RouteObject[] = [
             {
                 path: 'blog/:id',
                 element: <Article />,
+            },
+            {
+                path: 'events/:id',
+                element: <Event />,
             },
         ],
     },
@@ -117,6 +127,14 @@ const routes: RouteObject[] = [
                 path: 'initiatives/add',
                 element: <AddPresInitiative />,
             },
+            {
+                path: 'presidents/add',
+                element: <AddPresident />,
+            },
+            {
+                path: 'roll-call/add',
+                element: <AddRollCallYear/>
+            }
         ],
     },
 ]

@@ -108,7 +108,6 @@ const Blog = () => {
         setFetchingData(false)
         updateData([...data, ...articles])
     }
-    console.log(data)
 
     return (
         <div style={{ background: '#fafafa' }}>

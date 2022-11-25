@@ -164,7 +164,7 @@ const Footer = () => {
                                             color: '#fff5f1',
                                             fontSize: '70px',
                                             ':hover': {
-                                                color: '#4267B2',
+                                                color: '#f36a11',
                                             },
                                         }}
                                     />
@@ -184,7 +184,7 @@ const Footer = () => {
                                             color: '#fff5f1',
                                             fontSize: '70px',
                                             ':hover': {
-                                                color: '#00c6ff',
+                                                color: '#f36a11',
                                             },
                                         }}
                                     />
@@ -204,7 +204,7 @@ const Footer = () => {
                                             color: '#fff5f1',
                                             fontSize: '70px',
                                             ':hover': {
-                                                color: '#8a3ab9',
+                                                color: '#f36a11',
                                             },
                                         }}
                                     />
