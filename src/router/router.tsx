@@ -44,8 +44,9 @@ const AddPresInitiative = Loader(
 const AddPresident = Loader(
     lazy(() => import('../admin/pages/add/AddPresident'))
 )
-const AddRollCallYear = Loader(lazy(() => import('../admin/pages/add/AddRollCallYear')))
-
+const AddRollCallYear = Loader(
+    lazy(() => import('../admin/pages/add/AddRollCallYear'))
+)
 
 const routes: RouteObject[] = [
     {
@@ -75,6 +76,10 @@ const routes: RouteObject[] = [
             {
                 path: 'events/:id',
                 element: <Event />,
+            },
+            {
+                path: 'website',
+                element: <p>page not found sorry</p>,
             },
         ],
     },
@@ -133,8 +138,8 @@ const routes: RouteObject[] = [
             },
             {
                 path: 'roll-call/add',
-                element: <AddRollCallYear/>
-            }
+                element: <AddRollCallYear />,
+            },
         ],
     },
 ]
