@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Grid, TextField, Button, Typography, Box } from '@mui/material'
-import { collection, addDoc } from 'firebase/firestore'
+import { doc, setDoc } from 'firebase/firestore'
 
 import { db } from '../../../services/firebaseConfig'
 
@@ -12,8 +12,7 @@ const AddRollCallYear = () => {
         e.preventDefault()
         setLoader(true)
 
-        await addDoc(collection(db, 'RollCall'), {
-            createdAt: new Date(),
+        await setDoc(doc(db, 'RollCall', year), {
             year: year,
         })
             .then(() => {

@@ -22,6 +22,9 @@ const Blog = Loader(lazy(() => import('../general/pages/blog')))
 const Alumni = Loader(lazy(() => import('../general/pages/alumni')))
 const Article = Loader(lazy(() => import('../general/pages/article')))
 const Event = Loader(lazy(() => import('../general/pages/event')))
+const RollCallYearGeneral = Loader(
+    lazy(() => import('../general/pages/roll-call-year'))
+)
 
 //Admin Pages
 const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
@@ -33,6 +36,7 @@ const PresidentInitiatives = Loader(
 const PhotoGallery = Loader(lazy(() => import('../admin/pages/gallery')))
 const Presidents = Loader(lazy(() => import('../admin/pages/presidents')))
 const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')))
+const RollCallYear = Loader(lazy(() => import('../admin/pages/roll-call-year')))
 
 //Add Pages
 const AddBlog = Loader(lazy(() => import('../admin/pages/add/AddBlog')))
@@ -68,6 +72,10 @@ const routes: RouteObject[] = [
             {
                 path: 'alumni',
                 element: <Alumni />,
+            },
+            {
+                path: 'alumni/roll-call/:year',
+                element: <RollCallYearGeneral />,
             },
             {
                 path: 'blog/:id',
@@ -110,6 +118,10 @@ const routes: RouteObject[] = [
             {
                 path: 'roll-call',
                 element: <RollCall />,
+            },
+            {
+                path: 'roll-call/:year',
+                element: <RollCallYear />,
             },
             {
                 path: 'gallery',

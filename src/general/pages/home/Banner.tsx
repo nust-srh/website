@@ -13,11 +13,11 @@ const Banner = () => {
             >
                 <Container
                     maxWidth="lg"
-                    sx={{ minHeight: '450px', paddingBottom: '20px' }}
+                    sx={{ minHeight: '450px', paddingBottom: '40px' }}
                 >
                     <Grid
                         container
-                        sx={{ paddingTop: '100px' }}
+                        sx={{ paddingTop: '160px', paddingBottom: '20px' }}
                         alignItems="center"
                         justifyContent="center"
                     >
