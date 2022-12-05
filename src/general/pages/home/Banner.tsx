@@ -13,20 +13,20 @@ const Banner = () => {
             >
                 <Container
                     maxWidth="lg"
-                    sx={{ minHeight: '450px', paddingBottom: '40px' }}
+                    sx={{ minHeight: '550px', paddingBottom: '40px' }}
                 >
                     <Grid
                         container
-                        sx={{ paddingTop: '160px', paddingBottom: '20px' }}
+                        sx={{ paddingTop: '200px', paddingBottom: '20px' }}
                         alignItems="center"
                         justifyContent="center"
                     >
                         <Typography
-                            variant="h2"
                             sx={{
                                 color: '#fff',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
+                                fontSize: '4.2rem'
                             }}
                         >
                             We are the choice champions!
