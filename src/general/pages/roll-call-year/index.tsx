@@ -5,20 +5,10 @@ import {
     Container,
     Grid,
     Typography,
-    Box,
-    CardActions,
-    Button,
     CardContent,
 } from '@mui/material'
-import {
-    collection,
-    query,
-    onSnapshot,
-    deleteDoc,
-    doc,
-    orderBy,
-} from 'firebase/firestore'
-import { Link, useParams } from 'react-router-dom'
+import { collection, query, onSnapshot, doc, orderBy } from 'firebase/firestore'
+import { useParams } from 'react-router-dom'
 
 import { db } from '../../../services/firebaseConfig'
 
@@ -51,14 +41,14 @@ const RollCallYear = () => {
     }, [])
 
     return (
-        <div style={{minHeight: '50vh'}}>
+        <div style={{ minHeight: '50vh' }}>
             <Container maxWidth="lg" sx={{ padding: '30px' }}>
                 <Typography
                     align="center"
                     variant="h4"
                     sx={{ fontWeight: 'bold', color: '#f36a11' }}
                 >
-                    Peer Champions Recruited in {year}
+                    The Champions of {year}
                 </Typography>
                 <br />
                 <Grid container spacing={3} justifyContent="center">
