@@ -56,7 +56,7 @@ const WelcomeMessage = () => {
             (snapshot) => {
                 // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
                 const progressPercent = Math.round(
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
                 )
                 setProgress(progressPercent)
             },
@@ -99,9 +99,9 @@ const WelcomeMessage = () => {
                                 alert(error.message)
                                 setLoader(false)
                             })
-                    }
+                    },
                 )
-            }
+            },
         )
         setName('')
         setMessage('')

@@ -2,7 +2,6 @@ import { Container, Grid, Typography } from '@mui/material'
 import { doc, onSnapshot } from 'firebase/firestore'
 import React from 'react'
 import background from '../../../assets/background.jpg'
-import president from '../../../assets/president.jpg'
 import { db } from '../../../services/firebaseConfig'
 
 const Banner = () => {
