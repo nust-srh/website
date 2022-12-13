@@ -5,16 +5,19 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { HashRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import AuthProvider from './context/AuthProvider'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
     <React.StrictMode>
         <HelmetProvider>
-            <HashRouter>
-                <App />
-            </HashRouter>
+            <AuthProvider>
+                <HashRouter>
+                    <App />
+                </HashRouter>
+            </AuthProvider>
         </HelmetProvider>
-    </React.StrictMode>
+    </React.StrictMode>,
 )
 
 // If you want to start measuring performance in your app, pass a function

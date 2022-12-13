@@ -7,6 +7,9 @@ import SuspenseLoader from '../general/components/SuspenseLoader'
 //Layouts
 import GeneralPagesLayout from '../layouts/GeneralPagesLayout'
 import AdminPagesLayout from '../layouts/AdminPagesLayout'
+import BaseLayout from '../layouts/BaseLayout'
+
+import PrivateRoute from './PrivateRoute'
 
 const Loader = (Component: any) => (props: any) =>
     (
@@ -25,6 +28,7 @@ const Event = Loader(lazy(() => import('../general/pages/event')))
 const RollCallYearGeneral = Loader(
     lazy(() => import('../general/pages/roll-call-year'))
 )
+const AlumniEvent = Loader(lazy(() => import('../general/pages/alumniEvent.tsx')))
 
 //Admin Pages
 const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
@@ -37,6 +41,7 @@ const PhotoGallery = Loader(lazy(() => import('../admin/pages/gallery')))
 const Presidents = Loader(lazy(() => import('../admin/pages/presidents')))
 const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')))
 const RollCallYear = Loader(lazy(() => import('../admin/pages/roll-call-year')))
+const Login = Loader(lazy(()=> import('../admin/pages/login')))
 
 //Add Pages
 const AddBlog = Loader(lazy(() => import('../admin/pages/add/AddBlog')))
@@ -86,6 +91,10 @@ const routes: RouteObject[] = [
                 element: <Event />,
             },
             {
+                path: 'alumni/:id',
+                element: <AlumniEvent/>
+            },
+            {
                 path: 'website',
                 element: <p>page not found sorry</p>,
             },
@@ -93,7 +102,7 @@ const routes: RouteObject[] = [
     },
     {
         path: 'mambo',
-        element: <AdminPagesLayout />,
+        element: <PrivateRoute><AdminPagesLayout /></PrivateRoute>,
         children: [
             {
                 path: 'blog',
@@ -153,6 +162,16 @@ const routes: RouteObject[] = [
                 element: <AddRollCallYear />,
             },
         ],
+    },
+    {
+        path: 'ngena',
+        element: <BaseLayout/>,
+        children: [
+            {
+            path: '',
+            element: <Login/>
+            },
+        ]
     },
 ]
 

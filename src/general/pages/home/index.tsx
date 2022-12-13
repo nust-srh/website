@@ -10,8 +10,13 @@ const Home = () => {
     return (
         <>
         <Helmet>
-            <title>Asekuru</title>
-        </Helmet>
+                <title>NUST Choice Champions | Home</title>
+                <meta
+                    name="description"
+                    content="Promoting positive change in the lives of our fellow peers"
+                />
+                <meta name="keywords" content="Nust Choice Champions, Peer Educators, Zimbabwe, NUST, health, Choice Champions"/>
+            </Helmet>
             <Banner />
             <Join />
             <Calendar />

@@ -10,10 +10,16 @@ import {
 } from '@mui/material'
 import React from 'react'
 import emailjs from '@emailjs/browser'
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from '../../../services/firebaseConfig'
 
 const Contact = () => {
     const form = React.useRef<HTMLFormElement>(null)
     const [loader, setLoader] = React.useState(false)
+    const [loader2, setLoader2]= React.useState(false)
+    const [volunteering, setVolunteering] = React.useState<boolean>(false)
+    const [notices, setNotices] = React.useState<boolean>(false)
+    const [email, setEmail] = React.useState<string>('')
 
     const sendEmail = (e: { preventDefault: () => void }) => {
         e.preventDefault()
@@ -42,6 +48,30 @@ const Contact = () => {
                 },
             )
         currentForm.reset()
+    }
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault()
+        setLoader2(true)
+
+        const subscriptionRef = collection(db, 'NewsLetter')
+        await addDoc(subscriptionRef, {
+            email: email,
+            volunteering: volunteering,
+            notices: notices,
+        })
+            .then(() => {
+                setLoader2(false)
+                alert('Subscription Successful')
+            })
+            .catch((error) => {
+                alert(error.message)
+                setLoader2(false)
+            })
+
+        setEmail('')
+        setNotices(false)
+        setVolunteering(false)
     }
 
     return (
@@ -166,7 +196,9 @@ const Contact = () => {
                                             type="submit"
                                             variant="contained"
                                             style={{
-                                                backgroundColor: loader? '#ccc' : '#f36a11',
+                                                backgroundColor: loader
+                                                    ? '#ccc'
+                                                    : '#f36a11',
                                                 color: '#e1e1e1',
                                                 fontSize: '14px',
                                                 borderRadius: 10,
@@ -195,73 +227,83 @@ const Contact = () => {
                             >
                                 Subscribe to our Newsletter and mailing list
                             </Typography>
-                            <TextField
-                                type="email"
-                                placeholder="Enter email"
-                                label="Email"
-                                name="email"
-                                variant="outlined"
-                                fullWidth
-                                required
-                                inputProps={{
-                                    style: {
-                                        color: '#050543',
-                                    },
-                                }}
-                                InputLabelProps={{
-                                    style: {
-                                        color: '#f36a11',
-                                    },
-                                }}
-                                sx={{
-                                    '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                                        {
-                                            borderColor: '#f36a11',
-                                            borderWidth: '1px',
+                            <form onSubmit={handleSubmit}>
+                                <TextField
+                                    type="email"
+                                    placeholder="Enter email"
+                                    label="Email"
+                                    variant="outlined"
+                                    fullWidth
+                                    required
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    inputProps={{
+                                        style: {
+                                            color: '#050543',
                                         },
-                                    marginTop: '15px',
-                                }}
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            color: '#f36a11',
-                                            '&.Mui-checked': {
-                                                color: '#f36a11',
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="Send me important notices via email"
-                            />
-                            <FormControlLabel
-                                control={
-                                    <Checkbox
-                                        sx={{
-                                            color: '#f36a11',
-                                            '&.Mui-checked': {
-                                                color: '#f36a11',
-                                            },
-                                        }}
-                                    />
-                                }
-                                label="Add me on the always ready volunteers listing"
-                            />
-                            <Box textAlign="center" marginTop="15px">
-                                <Button
-                                    type="submit"
-                                    variant="contained"
-                                    style={{
-                                        backgroundColor: '#f36a11',
-                                        color: '#e1e1e1',
-                                        fontSize: '14px',
-                                        borderRadius: 10,
                                     }}
-                                >
-                                    Submit
-                                </Button>
-                            </Box>
+                                    InputLabelProps={{
+                                        style: {
+                                            color: '#f36a11',
+                                        },
+                                    }}
+                                    sx={{
+                                        '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+                                            {
+                                                borderColor: '#f36a11',
+                                                borderWidth: '1px',
+                                            },
+                                        marginTop: '15px',
+                                    }}
+                                />
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox
+                                            onChange={() =>
+                                                setNotices(!notices)
+                                            }
+                                            sx={{
+                                                color: '#f36a11',
+                                                '&.Mui-checked': {
+                                                    color: '#f36a11',
+                                                },
+                                            }}
+                                        />
+                                    }
+                                    label="Send me important notices via email"
+                                />
+                                <FormControlLabel
+                                    control={
+                                        <Checkbox
+                                            onChange={() =>
+                                                setVolunteering(!volunteering)
+                                            }
+                                            sx={{
+                                                color: '#f36a11',
+                                                '&.Mui-checked': {
+                                                    color: '#f36a11',
+                                                },
+                                            }}
+                                        />
+                                    }
+                                    label="Add me on the always ready volunteers listing"
+                                />
+                                <Box textAlign="center" marginTop="15px">
+                                <Button
+                                            type="submit"
+                                            variant="contained"
+                                            style={{
+                                                backgroundColor: loader2
+                                                    ? '#ccc'
+                                                    : '#f36a11',
+                                                color: '#e1e1e1',
+                                                fontSize: '14px',
+                                                borderRadius: 10,
+                                            }}
+                                        >
+                                            Submit
+                                        </Button>
+                                </Box>
+                            </form>
                         </Container>
                     </Grid>
                 </Grid>

@@ -11,6 +11,7 @@ import { collection, query, onSnapshot, doc, orderBy } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
 
 import { db } from '../../../services/firebaseConfig'
+import { Helmet } from 'react-helmet-async'
 
 type IPresident = {
     program: string
@@ -42,6 +43,14 @@ const RollCallYear = () => {
 
     return (
         <div style={{ minHeight: '50vh' }}>
+            <Helmet>
+                <title>{year} Champions</title>
+                <meta
+                    name="description"
+                    content="We have lived through and are proud to have served. We shall continue to serve, providing the roots for the organisation to blossom"
+                />
+                <meta name="keywords" content="Nust Choice Champions, Peer Educators, Zimbabwe, NUST, health, Choice Champions"/>
+            </Helmet>
             <Container maxWidth="lg" sx={{ padding: '30px' }}>
                 <Typography
                     align="center"
