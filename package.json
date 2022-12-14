@@ -1,7 +1,7 @@
 {
   "name": "choice-champs",
   "version": "0.1.0",
-  "homepage": "http://nust-srh.github.io/website",
+  "homepage": "https://choicechampions.org",
   "author": "Denis 'SiDesigned' Siduna",
   "private": true,
   "dependencies": {
