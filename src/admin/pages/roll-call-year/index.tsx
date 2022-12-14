@@ -18,34 +18,41 @@ import {
     doc,
     orderBy,
 } from 'firebase/firestore'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { db } from '../../../services/firebaseConfig'
+import AddRollCallPerson from '../add/AddRollCallPerson'
 
 type IPresident = {
+    program: string
     id: string
     imageUrl: string
     name: string
     year: string
 }
 
-const Presidents = () => {
-    const [Presidents, setPresidents] = React.useState<IPresident[]>([])
+const RollCallYear = () => {
+    const [recruits, setRecruits] = React.useState<IPresident[]>([])
+    const { year } = useParams()
 
     React.useEffect(() => {
-        const q = query(collection(db, 'Presidents'), orderBy('year', 'desc'))
+        const PeersRef = doc(db, 'RollCall', `${year ? year : '0'}`)
+        const q = query(
+            collection(PeersRef, 'educators'),
+            orderBy('createdAt', 'desc')
+        )
         const unsub = onSnapshot(q, (querySnapshot) => {
-            let PresidentsArray: any = []
+            let recruitsArray: any = []
             querySnapshot.forEach((doc) => {
-                PresidentsArray.push({ ...doc.data(), id: doc.id })
+                recruitsArray.push({ ...doc.data(), id: doc.id })
             })
-            setPresidents(PresidentsArray)
+            setRecruits(recruitsArray)
         })
         return () => unsub()
     }, [])
 
     const handleDelete = async (id: string) => {
-        await deleteDoc(doc(db, 'Presidents', id))
+        await deleteDoc(doc(db, 'RollCall', `${year}`, 'educators', id))
     }
 
     return (
@@ -56,69 +63,51 @@ const Presidents = () => {
                     variant="h5"
                     sx={{ fontWeight: 'bold' }}
                 >
-                    Presidents
+                    Recruits of the year {year}
                 </Typography>
                 <br />
-                <Link
-                    to="/mambo/presidents/add"
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ textDecoration: 'none' }}
-                >
-                    <Box
-                        textAlign="center"
-                        justifyContent="center"
-                        sx={{ padding: '20px' }}
-                    >
-                        <Button
-                            variant="outlined"
-                            sx={{
-                                backgroundColor: '#f36a11',
-                                color: '#fff',
-                                borderRadius: '10px',
-                            }}
-                        >
-                            Add President
-                        </Button>
-                    </Box>
-                </Link>
+                <AddRollCallPerson />
                 <Grid container spacing={3} justifyContent="center">
-                    {Presidents.map((president) => (
+                    {recruits.map((recruit) => (
                         <Grid
                             item
                             lg={3}
                             md={3}
                             sm={12}
                             xs={12}
-                            key={president?.id}
+                            key={recruit?.id}
                         >
                             <Card>
                                 <CardMedia
                                     component="img"
-                                    image={president?.imageUrl}
-                                    alt={president?.name}
+                                    image={recruit?.imageUrl}
+                                    alt={recruit?.name}
                                     height="200px"
                                 />
                                 <CardContent>
-                                    <Typography align="center" variant="subtitle1">
-                                        {president?.name}
+                                    <Typography
+                                        align="center"
+                                        variant="subtitle2"
+                                    >
+                                        {recruit?.name}
                                     </Typography>
                                     <Typography
                                         align="center"
                                         variant="subtitle2"
                                     >
-                                        {president?.year}
+                                        {recruit?.program}
                                     </Typography>
                                 </CardContent>
                                 <CardActions sx={{ justifyContent: 'center' }}>
                                     <Button
                                         variant="outlined"
                                         sx={{
-                                            backgroundColor: '#f36a11',
+                                            backgroundColor: 'red',
                                             color: '#fff',
+                                            fontSize: '10px'
                                         }}
                                         onClick={() =>
-                                            handleDelete(president?.id)
+                                            handleDelete(recruit?.id)
                                         }
                                     >
                                         Delete
@@ -133,4 +122,4 @@ const Presidents = () => {
     )
 }
 
-export default Presidents
+export default RollCallYear

@@ -135,6 +135,9 @@ const RollCall = () => {
                     >
                         The Choice Champions Roll Call
                     </Typography>
+                    <Typography variant='subtitle2' align='center' sx={{fontStyle: 'italic'}}>
+                        view by year of recruitment
+                    </Typography>
                 </Container>
                 <Grid
                     container
@@ -145,7 +148,7 @@ const RollCall = () => {
                     {data.map((year) => (
                         <Grid item lg={3} md={3} sm={6} xs={12} key={year?.id}>
                             <Link
-                                to={`/mambo/roll-call/${year?.year}`}
+                                to={`/alumni/roll-call/${year?.year}`}
                                 style={{ textDecoration: 'none' }}
                             >
                                 <Card sx={{ width: '150px' }}>

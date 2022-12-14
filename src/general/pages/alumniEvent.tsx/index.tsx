@@ -19,7 +19,7 @@ const Event = () => {
     const [event, setEvent] = useState<any>()
 
     useEffect(() => {
-        const docRef = doc(db, 'Events', id ? id : 'baba')
+        const docRef = doc(db, 'Initiatives', id ? id : 'baba')
         onSnapshot(docRef, (snapshot) => {
             setEvent({ ...snapshot.data(), id: snapshot.id })
         })

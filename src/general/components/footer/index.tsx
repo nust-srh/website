@@ -72,7 +72,7 @@ const Footer = () => {
                                         className="link"
                                         target="_blank"
                                         rel="noreferrer"
-                                        href="https://friendshipbench.org"
+                                        href="https://friendshipbenchzimbabwe.org"
                                     >
                                         Friendship Bench
                                     </a>

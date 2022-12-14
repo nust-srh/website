@@ -10,12 +10,41 @@ import {
     Button,
     Box,
 } from '@mui/material'
+import emailjs from '@emailjs/browser'
 
 const Join = () => {
     const [loader, setLoader] = React.useState(false)
-    const [name, setName] = React.useState<string>('')
-    const [email, setEmail] = React.useState<string>('')
-    const [phone, setPhone] = React.useState<string>('')
+
+    const form = React.useRef<HTMLFormElement>(null)
+
+    const sendEmail = (e: { preventDefault: () => void }) => {
+        e.preventDefault()
+        setLoader(true)
+
+        const currentForm = form.current
+        if (currentForm == null) return
+
+        emailjs
+            .sendForm(
+                'choice-champs',
+                'ncc-register',
+                currentForm,
+                's7js2dZoHMVYni1ob',
+            )
+            .then(
+                (result) => {
+                    console.log(result.text)
+                    setLoader(false)
+                    alert('Submission successful, we will get back to you')
+                },
+                (error) => {
+                    console.log(error.text)
+                    setLoader(false)
+                    alert('Error! Please try again')
+                },
+            )
+        currentForm.reset()
+    }
 
     return (
         <>
@@ -69,12 +98,12 @@ const Join = () => {
                                     If interested, please fill in your details
                                     and we will get back to you.
                                 </Typography>
-                                <form>
+                                <form ref={form} onSubmit={sendEmail}>
                                     <Grid container spacing={1}>
                                         <Grid xs={12} item>
                                             <TextField
                                                 placeholder="Name"
-                                                value={name}
+                                                name="name"
                                                 variant="outlined"
                                                 fullWidth
                                                 required
@@ -83,7 +112,7 @@ const Join = () => {
                                         <Grid item xs={12}>
                                             <TextField
                                                 placeholder="Email"
-                                                value={email}
+                                                name="email"
                                                 variant="outlined"
                                                 fullWidth
                                                 required
@@ -95,7 +124,7 @@ const Join = () => {
                                                 defaultCountry={'zw'}
                                                 fullWidth
                                                 required
-                                                value={phone}
+                                                name="phone"
                                                 onChange={() => {}}
                                             />
                                         </Grid>

@@ -11,6 +11,7 @@ import {
 } from 'firebase/firestore'
 
 import { db } from '../../../services/firebaseConfig'
+import { Link } from 'react-router-dom'
 
 const AlumniProjects = () => {
     const [initiatives, setInitiatives] = useState<any[]>([])
@@ -75,15 +76,23 @@ const AlumniProjects = () => {
                                         </Typography>
                                     </Grid>
                                     <Grid item lg={2} md={2} sm={12} xs={12}>
-                                        <Button
-                                            variant="outlined"
-                                            sx={{
-                                                backgroundColor: '#f36a11',
-                                                color: '#fff',
-                                            }}
+                                        <Link
+                                            to={`/alumni/${initiative.id}`}
+                                            style={{ textDecoration: 'none' }}
                                         >
-                                            Learn More
-                                        </Button>
+                                            <Button
+                                                type="submit"
+                                                variant="outlined"
+                                                style={{
+                                                    backgroundColor: '#f36a11',
+                                                    color: '#e1e1e1',
+                                                    fontSize: '14px',
+                                                    borderRadius: 10,
+                                                }}
+                                            >
+                                                Read More
+                                            </Button>
+                                        </Link>
                                         <br />
                                         <br />
                                     </Grid>

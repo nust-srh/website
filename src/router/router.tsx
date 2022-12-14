@@ -7,6 +7,9 @@ import SuspenseLoader from '../general/components/SuspenseLoader'
 //Layouts
 import GeneralPagesLayout from '../layouts/GeneralPagesLayout'
 import AdminPagesLayout from '../layouts/AdminPagesLayout'
+import BaseLayout from '../layouts/BaseLayout'
+
+import PrivateRoute from './PrivateRoute'
 
 const Loader = (Component: any) => (props: any) =>
     (
@@ -22,6 +25,10 @@ const Blog = Loader(lazy(() => import('../general/pages/blog')))
 const Alumni = Loader(lazy(() => import('../general/pages/alumni')))
 const Article = Loader(lazy(() => import('../general/pages/article')))
 const Event = Loader(lazy(() => import('../general/pages/event')))
+const RollCallYearGeneral = Loader(
+    lazy(() => import('../general/pages/roll-call-year'))
+)
+const AlumniEvent = Loader(lazy(() => import('../general/pages/alumniEvent.tsx')))
 
 //Admin Pages
 const AdminBlog = Loader(lazy(() => import('../admin/pages/blog')))
@@ -33,6 +40,8 @@ const PresidentInitiatives = Loader(
 const PhotoGallery = Loader(lazy(() => import('../admin/pages/gallery')))
 const Presidents = Loader(lazy(() => import('../admin/pages/presidents')))
 const RollCall = Loader(lazy(() => import('../admin/pages/roll-call')))
+const RollCallYear = Loader(lazy(() => import('../admin/pages/roll-call-year')))
+const Login = Loader(lazy(()=> import('../admin/pages/login')))
 
 //Add Pages
 const AddBlog = Loader(lazy(() => import('../admin/pages/add/AddBlog')))
@@ -44,8 +53,9 @@ const AddPresInitiative = Loader(
 const AddPresident = Loader(
     lazy(() => import('../admin/pages/add/AddPresident'))
 )
-const AddRollCallYear = Loader(lazy(() => import('../admin/pages/add/AddRollCallYear')))
-
+const AddRollCallYear = Loader(
+    lazy(() => import('../admin/pages/add/AddRollCallYear'))
+)
 
 const routes: RouteObject[] = [
     {
@@ -69,6 +79,10 @@ const routes: RouteObject[] = [
                 element: <Alumni />,
             },
             {
+                path: 'alumni/roll-call/:year',
+                element: <RollCallYearGeneral />,
+            },
+            {
                 path: 'blog/:id',
                 element: <Article />,
             },
@@ -76,11 +90,19 @@ const routes: RouteObject[] = [
                 path: 'events/:id',
                 element: <Event />,
             },
+            {
+                path: 'alumni/:id',
+                element: <AlumniEvent/>
+            },
+            {
+                path: 'website',
+                element: <p>page not found sorry</p>,
+            },
         ],
     },
     {
         path: 'mambo',
-        element: <AdminPagesLayout />,
+        element: <PrivateRoute><AdminPagesLayout /></PrivateRoute>,
         children: [
             {
                 path: 'blog',
@@ -105,6 +127,10 @@ const routes: RouteObject[] = [
             {
                 path: 'roll-call',
                 element: <RollCall />,
+            },
+            {
+                path: 'roll-call/:year',
+                element: <RollCallYear />,
             },
             {
                 path: 'gallery',
@@ -133,9 +159,19 @@ const routes: RouteObject[] = [
             },
             {
                 path: 'roll-call/add',
-                element: <AddRollCallYear/>
-            }
+                element: <AddRollCallYear />,
+            },
         ],
+    },
+    {
+        path: 'ngena',
+        element: <BaseLayout/>,
+        children: [
+            {
+            path: '',
+            element: <Login/>
+            },
+        ]
     },
 ]
 

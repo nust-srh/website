@@ -24,6 +24,7 @@ import {
     Unsubscribe,
 } from 'firebase/firestore'
 import { db } from '../../../services/firebaseConfig'
+import { Helmet } from 'react-helmet-async'
 
 const articleSize = 4
 
@@ -111,6 +112,14 @@ const Blog = () => {
 
     return (
         <div style={{ background: '#fafafa' }}>
+            <Helmet>
+                <title>Blog | Choice Champions</title>
+                <meta
+                    name="description"
+                    content="Read and get inspired by pieces written by our peer educator network of writers"
+                />
+                <meta name="keywords" content="Nust Choice Champions, Peer Educators, Zimbabwe, NUST, health, Choice Champions"/>
+            </Helmet>
             <img src={banner} width="100%" height="250px" alt="banner" />
             <br />
             <Container maxWidth="lg">

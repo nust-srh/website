@@ -1,9 +1,19 @@
 import { Container, Grid, Typography } from '@mui/material'
+import { doc, onSnapshot } from 'firebase/firestore'
 import React from 'react'
 import background from '../../../assets/background.jpg'
-import president from '../../../assets/president.jpg'
+import { db } from '../../../services/firebaseConfig'
 
 const Banner = () => {
+    const [remarks, setRemarks] = React.useState<any>()
+
+    React.useEffect(() => {
+        const docRef = doc(db, 'Welcome', 'Remarks')
+        onSnapshot(docRef, (snapshot) => {
+            setRemarks({ ...snapshot.data(), id: snapshot.id })
+        })
+    })
+
     return (
         <div style={{ backgroundColor: '#fafafa' }}>
             <div
@@ -13,20 +23,20 @@ const Banner = () => {
             >
                 <Container
                     maxWidth="lg"
-                    sx={{ minHeight: '450px', paddingBottom: '20px' }}
+                    sx={{ minHeight: '550px', paddingBottom: '40px' }}
                 >
                     <Grid
                         container
-                        sx={{ paddingTop: '100px' }}
+                        sx={{ paddingTop: '200px', paddingBottom: '20px' }}
                         alignItems="center"
                         justifyContent="center"
                     >
                         <Typography
-                            variant="h2"
                             sx={{
                                 color: '#fff',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
+                                fontSize: '4.2rem',
                             }}
                         >
                             We are the choice champions!
@@ -71,19 +81,17 @@ const Banner = () => {
                                     padding: '30px',
                                 }}
                             >
-                                "Welcome, you are at the right place. We love
-                                you, and our goal is for you to make informed
-                                decisions that will bring you joy today, and in
-                                the future"
+                                {remarks?.message}
                             </Typography>
                         </Grid>
                     </Grid>
                     <Grid item lg={3.5} md={3.5} xs={12} sm={12}>
                         <img
-                            src={president}
-                            alt="president"
+                            src={remarks?.imageUrl}
+                            alt={remarks?.name}
                             style={{
                                 height: '250px',
+                                width: '250px',
                                 borderRadius: '125px',
                             }}
                         />
@@ -92,7 +100,7 @@ const Banner = () => {
                             align="right"
                             sx={{ color: '#050543' }}
                         >
-                            Silas Mavende
+                            {remarks?.name}
                         </Typography>
                         <Typography
                             variant="subtitle2"
