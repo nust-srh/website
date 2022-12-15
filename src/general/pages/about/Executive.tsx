@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import Collapse from '@mui/material/Collapse'
-import IconButton, { IconButtonProps } from '@mui/material/IconButton'
+import IconButton from '@mui/material/IconButton'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
 import { query, collection, onSnapshot, orderBy } from 'firebase/firestore'
@@ -78,7 +78,7 @@ const Executive = () => {
                             >
                                 <CardMedia
                                     component="img"
-                                    height="240"
+                                    height="300"
                                     image={member.imageUrl}
                                     alt={member.name}
                                     sx={{maxWidth: '300'}}

@@ -20,7 +20,7 @@ function Story() {
                         style={{ height: 'auto', width: '100%' }}
                     />
                 </Grid>
-                <Grid item lg={6} xs={12} sx={{ padding: '40px' }}>
+                <Grid item lg={6} xs={12} sx={{ padding: '20px' }}>
                     <Typography
                         variant="h4"
                         align="center"
@@ -31,7 +31,7 @@ function Story() {
                     <Typography
                         variant="subtitle1"
                         align="center"
-                        sx={{ color: '#050543', padding: '0 20px' }}
+                        sx={{ color: '#050543', padding: '0 10px' }}
                     >
                         The genesis of this noble movement can be traced back to
                         2015 when a group of students decided to come together
@@ -51,7 +51,7 @@ function Story() {
                 alignItems="center"
                 justifyContent="center"
             >
-                <Grid item lg={6} xs={12} sx={{ padding: '40px' }}>
+                <Grid item lg={6} xs={12} sx={{ padding: '20px' }}>
                     <Typography
                         variant="h4"
                         align="center"
@@ -62,7 +62,7 @@ function Story() {
                     <Typography
                         variant="subtitle1"
                         align="center"
-                        sx={{ color: '#050543', padding: '0 20px'}}
+                        sx={{ color: '#050543', padding: '0 10px'}}
                     >
                         We are resolute and passionate in our endeavour to
                         ensure that our communities make informed decisions

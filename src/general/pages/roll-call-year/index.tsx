@@ -75,7 +75,7 @@ const RollCallYear = () => {
                                     component="img"
                                     image={recruit?.imageUrl}
                                     alt={recruit?.name}
-                                    height="250px"
+                                    height="300px"
                                 />
                                 <CardContent>
                                     <Typography

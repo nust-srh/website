@@ -12,8 +12,6 @@ const Blog = () => {
             </Typography>
             <Link
                 to='/mambo/blog/add'
-                target='_blank'
-                rel='noreferrer'
                 style={{ textDecoration: 'none' }}
             >
                 <Box

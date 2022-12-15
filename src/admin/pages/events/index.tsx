@@ -21,8 +21,6 @@ const Calendar = () => {
                 >
                     <Link
                         to="/mambo/events/add"
-                        target="_blank"
-                        rel="noreferrer"
                         style={{ textDecoration: 'none' }}
                     >
                         <Button
