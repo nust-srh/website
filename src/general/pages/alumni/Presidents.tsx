@@ -28,7 +28,7 @@ async function articlesNextBatch(lastDocument: any) {
         collection(db, 'Presidents'),
         orderBy('year', 'desc'),
         startAfter(lastDocument),
-        limit(articleSize)
+        limit(articleSize),
     )
 
     const articles: any[] = []
@@ -46,12 +46,12 @@ async function articlesNextBatch(lastDocument: any) {
 }
 
 function getFirstArticlesBatch(
-    snapshotCallback: (querySnapshot: QuerySnapshot<DocumentData>) => void
+    snapshotCallback: (querySnapshot: QuerySnapshot<DocumentData>) => void,
 ): Unsubscribe {
     const q = query(
         collection(db, 'Presidents'),
         orderBy('year', 'desc'),
-        limit(articleSize)
+        limit(articleSize),
     )
 
     return onSnapshot(q, snapshotCallback)
@@ -80,7 +80,7 @@ const Presidents = () => {
                 setLastDocument(
                     querySnapshot.docChanges()[
                         querySnapshot.docChanges().length - 1
-                    ].doc
+                    ].doc,
                 )
             setFetchingData(false)
             updateData([...posts, ...dataRef.current])
@@ -114,10 +114,15 @@ const Presidents = () => {
                         color: '#f36a11',
                     }}
                 >
-                    Past Presidents
+                    Former Presidents
                 </Typography>
             </Container>
-            <Grid container spacing={3} justifyContent='center' sx={{padding: '20px'}}>
+            <Grid
+                container
+                spacing={3}
+                justifyContent="center"
+                sx={{ padding: '20px' }}
+            >
                 {data.map((president) => (
                     <Grid
                         item
@@ -132,7 +137,7 @@ const Presidents = () => {
                                 component="img"
                                 image={president?.imageUrl}
                                 alt={president?.name}
-                                height="250px"
+                                height="300px"
                             />
                             <CardContent>
                                 <Typography align="center" variant="subtitle1">
