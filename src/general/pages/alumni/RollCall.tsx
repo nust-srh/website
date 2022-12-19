@@ -15,7 +15,7 @@ import {
 } from 'firebase/firestore'
 import { db } from '../../../services/firebaseConfig'
 
-const articleSize = 4
+const articleSize = 5
 
 /**
  * this function will be fired each time the user click on 'More Posts' button,
