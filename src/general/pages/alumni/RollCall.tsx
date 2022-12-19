@@ -24,8 +24,8 @@ const articleSize = 5
  */
 async function articlesNextBatch(lastDocument: any) {
     const next = query(
-        collection(db, 'Blogs'),
-        orderBy('createdAt', 'desc'),
+        collection(db, 'RollCall'),
+        orderBy('year', 'desc'),
         startAfter(lastDocument),
         limit(articleSize)
     )
