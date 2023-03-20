@@ -1,5 +1,35 @@
-import { Handshake, Diversity1, MilitaryTech, Lock } from '@mui/icons-material'
 import { Box, Container, Grid, Typography } from '@mui/material'
+
+import confidentiality from '../../../assets/confidentiality.png'
+import inclusive from '../../../assets/inclusive.png'
+import excellence from '../../../assets/excellence.png'
+import integrity from '../../../assets/integrity.png'
+
+
+
+type coreValue = {
+    name: string,
+    picture: string,
+}
+
+const coreValues: coreValue[] = [
+    {
+        name: 'Integrity',
+        picture: integrity
+    },
+    {
+        name: 'Inclusivity',
+        picture: inclusive
+    },
+    {
+        name: 'Excellence',
+        picture: excellence
+    },
+    {
+        name: 'Confidentiality',
+        picture: confidentiality
+    },
+]
 
 function Objectives() {
     return (
@@ -34,111 +64,46 @@ function Objectives() {
                         fontSize: '1.9rem',
                         color: '#f36a11',
                         fontWeight: 'bold',
+                        paddingBottom: '24px'
                     }}
                 >
                     Our Core Values
                 </Typography>
                 <Grid container spacing={5} justifyContent="space-evenly">
-                    <Grid item lg={3} md={3} xs={12}>
-                        <Box
-                            alignItems="center"
-                            display="flex"
-                            flexDirection="column"
-                        >
-                            <Box>
-                                <Handshake
-                                    sx={{
-                                        color: '#f36a11',
-                                        fontSize: '150px',
-                                    }}
-                                />
+                    {coreValues.map((item, index) => (
+                        <Grid item lg={3} md={3} xs={12}>
+                            <Box
+                                alignItems="center"
+                                display="flex"
+                                flexDirection="column"
+                                minHeight='240px'
+                                sx={{
+                                    borderRadius: '12px',
+                                    paddingX: '8px'
+                                }}
+                            >
+                                <Box>
+                                    <img
+                                        src={item.picture}
+                                        alt=''
+                                        height='140px'
+                                    />
+                                </Box>
+                                <Box>
+                                    <Typography
+                                        align="center"
+                                        sx={{
+                                            paddingY: '20px',
+                                            fontWeight: 'bold',
+                                            fontSize: '1.3rem'
+                                        }}
+                                    >
+                                        {item.name}
+                                    </Typography>
+                                </Box>
                             </Box>
-                            <Box>
-                                <Typography
-                                    align="center"
-                                    variant="h6"
-                                    sx={{ color: '#050543' }}
-                                >
-                                    Integrity
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item lg={3} md={3} xs={12}>
-                        <Box
-                            alignItems="center"
-                            display="flex"
-                            flexDirection="column"
-                        >
-                            <Box>
-                                <Diversity1
-                                    sx={{
-                                        color: '#f36a11',
-                                        fontSize: '150px',
-                                    }}
-                                />
-                            </Box>
-                            <Box>
-                                <Typography
-                                    align="center"
-                                    variant="h6"
-                                    sx={{ color: '#050543' }}
-                                >
-                                    Inclusivity
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item lg={3} md={3} xs={12}>
-                        <Box
-                            alignItems="center"
-                            display="flex"
-                            flexDirection="column"
-                        >
-                            <Box>
-                                <MilitaryTech
-                                    sx={{
-                                        color: '#f36a11',
-                                        fontSize: '150px',
-                                    }}
-                                />
-                            </Box>
-                            <Box>
-                                <Typography
-                                    align="center"
-                                    variant="h6"
-                                    sx={{ color: '#050543' }}
-                                >
-                                    Excellence
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item lg={3} md={3} xs={12}>
-                        <Box
-                            alignItems="center"
-                            display="flex"
-                            flexDirection="column"
-                        >
-                            <Box>
-                                <Lock
-                                    sx={{
-                                        color: '#f36a11',
-                                        fontSize: '150px',
-                                    }}
-                                />
-                            </Box>
-                            <Box>
-                                <Typography
-                                    align="center"
-                                    variant="h6"
-                                    sx={{ color: '#050543' }}
-                                >
-                                    Confidentiality
-                                </Typography>
-                            </Box>
-                        </Box>
-                    </Grid>
+                        </Grid>
+                    ))}
                 </Grid>
             </Container>
         </div>

@@ -16,7 +16,7 @@ import { db } from '../../../services/firebaseConfig'
 const Contact = () => {
     const form = React.useRef<HTMLFormElement>(null)
     const [loader, setLoader] = React.useState(false)
-    const [loader2, setLoader2]= React.useState(false)
+    const [loader2, setLoader2] = React.useState(false)
     const [volunteering, setVolunteering] = React.useState<boolean>(false)
     const [notices, setNotices] = React.useState<boolean>(false)
     const [email, setEmail] = React.useState<string>('')
@@ -126,10 +126,10 @@ const Contact = () => {
                                         }}
                                         sx={{
                                             '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                                                {
-                                                    borderColor: '#f36a11',
-                                                    borderWidth: '1px',
-                                                },
+                                            {
+                                                borderColor: '#f36a11',
+                                                borderWidth: '1px',
+                                            },
                                         }}
                                     />
                                 </Grid>
@@ -154,10 +154,10 @@ const Contact = () => {
                                         }}
                                         sx={{
                                             '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                                                {
-                                                    borderColor: '#f36a11',
-                                                    borderWidth: '1px',
-                                                },
+                                            {
+                                                borderColor: '#f36a11',
+                                                borderWidth: '1px',
+                                            },
                                         }}
                                     />
                                 </Grid>
@@ -183,10 +183,10 @@ const Contact = () => {
                                         }}
                                         sx={{
                                             '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                                                {
-                                                    borderColor: '#f36a11',
-                                                    borderWidth: '1px',
-                                                },
+                                            {
+                                                borderColor: '#f36a11',
+                                                borderWidth: '1px',
+                                            },
                                         }}
                                     />
                                 </Grid>
@@ -248,10 +248,10 @@ const Contact = () => {
                                     }}
                                     sx={{
                                         '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                                            {
-                                                borderColor: '#f36a11',
-                                                borderWidth: '1px',
-                                            },
+                                        {
+                                            borderColor: '#f36a11',
+                                            borderWidth: '1px',
+                                        },
                                         marginTop: '15px',
                                     }}
                                 />
@@ -288,20 +288,20 @@ const Contact = () => {
                                     label="Add me on the always ready volunteers listing"
                                 />
                                 <Box textAlign="center" marginTop="15px">
-                                <Button
-                                            type="submit"
-                                            variant="contained"
-                                            style={{
-                                                backgroundColor: loader2
-                                                    ? '#ccc'
-                                                    : '#f36a11',
-                                                color: '#e1e1e1',
-                                                fontSize: '14px',
-                                                borderRadius: 10,
-                                            }}
-                                        >
-                                            Submit
-                                        </Button>
+                                    <Button
+                                        type="submit"
+                                        variant="contained"
+                                        style={{
+                                            backgroundColor: loader2
+                                                ? '#ccc'
+                                                : '#f36a11',
+                                            color: '#e1e1e1',
+                                            fontSize: '14px',
+                                            borderRadius: 10,
+                                        }}
+                                    >
+                                        Submit
+                                    </Button>
                                 </Box>
                             </form>
                         </Container>

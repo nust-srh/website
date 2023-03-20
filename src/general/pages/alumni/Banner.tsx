@@ -10,7 +10,7 @@ const Banner = () => {
                     backgroundImage: `url(${alumniBanner})`,
                 }}
             >
-                <Box sx={{ minHeight: '450px', paddingBottom: '20px', padding: '40px'}}>
+                <Box sx={{ minHeight: '550px', paddingBottom: '20px', padding: '40px'}}>
                     <Grid
                         container
                         sx={{ paddingTop: '60px' }}
@@ -23,7 +23,7 @@ const Banner = () => {
                                 color: '#fff',
                                 fontWeight: 'bold',
                                 textAlign: 'center',
-                                paddingTop: '150px',
+                                paddingTop: '240px',
                             }}
                         >
                             We came, we conquered, and we continue to serve!

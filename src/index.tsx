@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals'
 import { HashRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import AuthProvider from './context/AuthProvider'
+import "typeface-roboto";
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
