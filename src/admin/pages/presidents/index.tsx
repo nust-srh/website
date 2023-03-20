@@ -61,8 +61,6 @@ const Presidents = () => {
                 <br />
                 <Link
                     to="/mambo/presidents/add"
-                    target="_blank"
-                    rel="noreferrer"
                     style={{ textDecoration: 'none' }}
                 >
                     <Box

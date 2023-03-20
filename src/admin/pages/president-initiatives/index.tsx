@@ -27,8 +27,6 @@ const PresidentInitiatives = () => {
                 >
                     <Link
                         to="/mambo/initiatives/add"
-                        target="_blank"
-                        rel="noreferrer"
                         style={{ textDecoration: 'none' }}
                     >
                         <Button

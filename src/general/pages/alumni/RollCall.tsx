@@ -15,7 +15,7 @@ import {
 } from 'firebase/firestore'
 import { db } from '../../../services/firebaseConfig'
 
-const articleSize = 4
+const articleSize = 5
 
 /**
  * this function will be fired each time the user click on 'More Posts' button,
@@ -24,8 +24,8 @@ const articleSize = 4
  */
 async function articlesNextBatch(lastDocument: any) {
     const next = query(
-        collection(db, 'Blogs'),
-        orderBy('createdAt', 'desc'),
+        collection(db, 'RollCall'),
+        orderBy('year', 'desc'),
         startAfter(lastDocument),
         limit(articleSize)
     )
@@ -146,18 +146,18 @@ const RollCall = () => {
                     justifyContent="space-evenly"
                 >
                     {data.map((year) => (
-                        <Grid item lg={3} md={3} sm={6} xs={12} key={year?.id}>
+                        <Grid item lg={2.4} md={3} sm={4} xs={6} key={year?.id}>
                             <Link
                                 to={`/alumni/roll-call/${year?.year}`}
                                 style={{ textDecoration: 'none' }}
                             >
-                                <Card sx={{ width: '150px' }}>
+                                <Card sx={{ width: '125px' }}>
                                     <Box
                                         justifyContent="center"
                                         alignItems="center"
                                         textAlign="center"
                                         display="flex"
-                                        height="150px"
+                                        height="125px"
                                     >
                                         {year?.year}
                                     </Box>

@@ -11,8 +11,6 @@ const PhotoGallery = () => {
             </Typography>
             <Link
                 to="/mambo/gallery/add"
-                target="_blank"
-                rel="noreferrer"
                 style={{ textDecoration: 'none' }}
             >
                 <Box
