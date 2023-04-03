@@ -81,12 +81,18 @@ const Executive = () => {
                                     height="300"
                                     image={member.imageUrl}
                                     alt={member.name}
-                                    sx={{maxWidth: '300'}}
+                                    sx={{ maxWidth: '300' }}
                                 />
                                 <CardHeader
+                                    titleTypographyProps={{
+                                        fontSize: 22,
+                                    }}
+                                    subheaderTypographyProps={{
+                                        fontSize: 16,
+                                    }}
                                     title={member.name}
                                     subheader={member.office}
-                                    sx={{ height: '60px' }}
+                                    sx={{ height: '70px' }}
                                 />
                                 <CardActions disableSpacing>
                                     <IconButton
